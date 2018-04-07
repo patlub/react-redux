@@ -1,60 +1,76 @@
 import React from 'react';
+import TextField from 'material-ui/TextField'
+import RaisedButton from 'material-ui/RaisedButton'
 
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       firstName: '',
-      lastname: '',
+      lastName: '',
       email: '',
       password: '',
     };
-  }
-
-  handleSubmit = (event) => {
-    event.preventDefault();
   }
 
   onInputChanged = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.props.signupAction()
+  }
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input
+        <TextField
           type="text"
           name="firstName"
           value={this.state.firstName}
-          placeholder="First Name"
           onChange={this.onInputChanged}
-          required
+          hintText="First name"
+          fullWidth
+          className="text-field"
         />
-        <input
+
+        <TextField
           type="text"
           name="lastName"
-          value={this.state.lastname}
-          placeholder="last Name"
+          value={this.state.lastName}
           onChange={this.onInputChanged}
-          required
+          hintText="Last name"
+          fullWidth
+          className="text-field"
         />
-        <input
+
+        <TextField
           type="email"
           name="email"
           value={this.state.email}
-          placeholder="Email"
           onChange={this.onInputChanged}
-          required
+          hintText="Email"
+          fullWidth
+          className="text-field"
         />
-        <input
+
+        <TextField
           type="password"
-          name="Password"
+          name="password"
           value={this.state.password}
-          placeholder="Password"
           onChange={this.onInputChanged}
-          required
+          hintText="Password"
+          fullWidth
+          className="text-field"
         />
-      </form>
+        <RaisedButton
+          type="submit"
+          label="Sign up"
+          primary
+          fullWidth
+        />
+        </form>
     );
   }
 }
