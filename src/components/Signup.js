@@ -16,6 +16,7 @@ class Signup extends React.Component {
     return (
       <div className="container-fluid">
         <MuiThemeProvider>
+          <div>
           <div className="row">
             <ApplicationBar />
           </div>
@@ -25,8 +26,10 @@ class Signup extends React.Component {
               <SignupForm signupAction={signupAction} />
             </div>
           </div>
+          </div>
         </MuiThemeProvider>
       </div>
+
     );
   }
 }

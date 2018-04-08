@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router';
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 
@@ -10,6 +11,8 @@ class SignupForm extends React.Component {
       lastName: '',
       email: '',
       password: '',
+      error: '',
+      authenticated: false
     };
   }
 
@@ -19,10 +22,22 @@ class SignupForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.signupAction()
+    this.setState({errors: false})
+    this.props.signupAction(this.state).then(
+      () => {
+       this.setState({ authenticated: true })
+      }
+    ).catch(
+      error => {
+        console.log(error)
+        this.setState({ errors: true })
+      }
+    )
   }
 
   render() {
+    if(this.state.authenticated) return <Redirect to='/'/>
+
     return (
       <form onSubmit={this.handleSubmit}>
         <TextField
