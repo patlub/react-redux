@@ -11,3 +11,15 @@ export function signupAction(userData) {
     )
   );
 }
+
+export function signinAction(userData) {
+  return dispatch => (
+    axiosInstance.post('/api/users/signIn', userData).then(
+      response => {
+        console.log(response);
+        const { token } = response.data;
+        setAuthorizationToken(token);
+      }
+    )
+  );
+}

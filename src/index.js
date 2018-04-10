@@ -6,6 +6,7 @@ import { BrowserRouter, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import App from './components/App';
 import Signup from './components/Signup';
+import Signin from './components/Signin';
 import store from './store';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -15,6 +16,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/" component={App} />
         <Route path="/users/signup" component={Signup} />
+        <Route path="/users/signin" component={Signin} />
       </Switch>
     </Provider>
   </BrowserRouter>,
