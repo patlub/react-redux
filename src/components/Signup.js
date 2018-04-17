@@ -17,15 +17,15 @@ class Signup extends React.Component {
       <div className="container-fluid">
         <MuiThemeProvider>
           <div>
-          <div className="row">
-            <ApplicationBar />
-          </div>
-          <div className="row vertical">
-            <div className="col-3">
-              <div className="col-12 sign-up-title">Sign Up</div>
-              <SignupForm signupAction={signupAction} />
+            <div className="row">
+              <ApplicationBar />
             </div>
-          </div>
+            <div className="row vertical">
+              <div className="col-3">
+                <div className="col-12 sign-up-title">Sign Up</div>
+                <SignupForm signupAction={signupAction} />
+              </div>
+            </div>
           </div>
         </MuiThemeProvider>
       </div>
