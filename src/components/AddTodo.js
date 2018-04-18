@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import AddTodoForm from '../containers/AddTodoForm';
-import { addTodoAction } from '../actions/auth';
+import { addTodoAction } from '../actions/todo';
 import ApplicationBar from './ApplicationBar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -23,7 +23,7 @@ class AddTodo extends React.Component {
             <div className="row vertical">
               <div className="col-3">
                 <div className="col-12 sign-up-title">Add Todo</div>
-                <AddTodoForm signinAction={addTodoAction} />
+                <AddTodoForm addTodoAction={addTodoAction} />
               </div>
             </div>
           </div>

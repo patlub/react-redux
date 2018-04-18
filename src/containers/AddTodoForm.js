@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from 'react-router';
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 
@@ -8,6 +7,7 @@ class AddTodoForm extends React.Component {
     super(props);
     this.state = {
       title: '',
+      userId: 1,
     };
   }
 
@@ -19,7 +19,9 @@ class AddTodoForm extends React.Component {
     event.preventDefault();
     this.setState({errors: false})
     this.props.addTodoAction(this.state).then(
-      () => {}
+      (response) => {
+        console.log(response)
+      }
     ).catch(
       error => {
         console.log(error)
