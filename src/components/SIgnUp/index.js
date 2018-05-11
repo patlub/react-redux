@@ -2,9 +2,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import SignupForm from '../containers/SignupForm';
-import { signupAction } from '../actions/auth';
-import ApplicationBar from './ApplicationBar';
+import SignupForm from '../../containers/SignUp';
+import { signupAction } from '../../actions/auth';
+import ApplicationBar from '../ApplicationBar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const mapStateToProps = state => ({ state });

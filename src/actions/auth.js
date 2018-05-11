@@ -22,3 +22,9 @@ export function signinAction(userData) {
     )
   );
 }
+
+export function addBucketAction(todoData) {
+  return dispatch => (
+    axiosInstance.post('api/users/addTodo', todoData)
+  );
+}

@@ -5,9 +5,9 @@ import { Route } from 'react-router';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import App from './components/App';
-import Signup from './components/Signup';
-import Signin from './components/Signin';
-import AddTodo from './components/AddTodo';
+import Signup from './components/SIgnUp/index';
+import Signin from './components/SignIn/index';
+import AddTodo from './components/Todo/AddTodo';
 import store from './store';
 import axiosInstance from './utils/axiosInstance';
 import registerServiceWorker from './registerServiceWorker';
@@ -27,9 +27,9 @@ ReactDOM.render(
     <Provider store={store()}>
       <Switch>
         <Route exact path="/" component={App} />
-        <Route path="/users/signup" component={Signup} />
-        <Route path="/users/signin" component={Signin} />
-        <Route path="/todos/addtodo" component={AddTodo} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/signin" component={Signin} />
+        <Route path="/addtodo" component={AddTodo} />
       </Switch>
     </Provider>
   </BrowserRouter>,

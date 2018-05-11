@@ -2,17 +2,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import AddTodoForm from '../containers/AddTodoForm';
-import { addTodoAction } from '../actions/todo';
-import ApplicationBar from './ApplicationBar';
+import SigninForm from '../../containers/SignIn';
+import { signinAction } from '../../actions/auth';
+import ApplicationBar from '../ApplicationBar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const mapStateToProps = state => ({ state });
 
-class AddTodo extends React.Component {
+class Signin extends React.Component {
 
   render() {
-    const { addTodoAction } = this.props;
+    const { signinAction } = this.props;
     return (
       <div className="container-fluid">
         <MuiThemeProvider>
@@ -22,8 +22,8 @@ class AddTodo extends React.Component {
             </div>
             <div className="row vertical">
               <div className="col-3">
-                <div className="col-12 sign-up-title">Add Todo</div>
-                <AddTodoForm addTodoAction={addTodoAction} />
+                <div className="col-12 sign-up-title">Sign In</div>
+                <SigninForm signinAction={signinAction} />
               </div>
             </div>
           </div>
@@ -34,8 +34,8 @@ class AddTodo extends React.Component {
   }
 }
 
-AddTodo.propTypes = {
-  addTodoAction: PropTypes.func,
+Signin.propTypes = {
+  signinAction: PropTypes.func,
 };
 
-export default connect(mapStateToProps, { addTodoAction })(AddTodo);
+export default connect(mapStateToProps, { signinAction })(Signin);
